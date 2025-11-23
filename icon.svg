@@ -1,0 +1,31 @@
+<svg viewBox="0 0 128 122" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clipboard shape -->
+  <rect x="16" y="8" width="96" height="112" rx="6" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="3"/>
+  <rect x="40" y="0" width="48" height="12" rx="3" fill="#9CA3AF"/>
+  
+  <!-- CSV representation (left side - table grid) -->
+  <g opacity="0.9">
+    <rect x="20" y="24" width="20" height="14" fill="#10B981" rx="2"/>
+    <rect x="44" y="24" width="20" height="14" fill="#10B981" rx="2"/>
+    <rect x="20" y="42" width="20" height="14" fill="#059669" rx="2"/>
+    <rect x="44" y="42" width="20" height="14" fill="#059669" rx="2"/>
+  </g>
+  
+  <!-- JSON representation (right side - curly braces) -->
+  <g opacity="0.9">
+    <text x="67" y="48" font-family="monospace" font-size="38" font-weight="bold" fill="#F59E0B">{}</text>
+  </g>
+  
+  <!-- Transform arrows in center -->
+  <g transform="translate(64, 85)">
+    <!-- Arrow pointing right -->
+    <path d="M -24 -10 L 2 -10 L 2 -16 L 20 -1 L 2 14 L 2 8 L -24 8 Z" fill="#EF4444"/>
+    <!-- Arrow pointing left -->
+    <path d="M 24 16 L -2 16 L -2 24 L -20 9 L -2 -6 L -2 2 L 24 2 Z" fill="#3B82F6"/>
+  </g>
+  
+  <!-- Decorative sparkles for "transform" effect -->
+  <circle cx="100" cy="20" r="3" fill="#FBBF24" opacity="0.8"/>
+  <circle cx="28" cy="108" r="3" fill="#FBBF24" opacity="0.8"/>
+  <path d="M 95 105 L 98 108 L 95 111 L 92 108 Z" fill="#FBBF24" opacity="0.8"/>
+</svg>

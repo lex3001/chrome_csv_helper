@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Clipboard Transformer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="detected" class="detected">Detected: <span id="detected-format">(checking...)</span></div>
+      <div id="status" class="status"></div>
+
+      <div class="controls">
+        <button id="detect">Detect clipboard (click to allow)</button>
+      </div>
+
+      <div class="paste-fallback">
+        <label for="paste-input">Paste data here if clipboard access is blocked:</label>
+        <textarea id="paste-input" placeholder="Paste TSV / CSV / JSON / JOOQ here"></textarea>
+        <div style="display:flex; gap:6px; margin-top:6px">
+          <button id="use-paste">Use pasted data</button>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button id="to-csv-comma">To CSV (comma)</button>
+        <button id="to-csv-pipe">To CSV (pipe)</button>
+        <button id="to-json">To JSON</button>
+        <button id="to-tsv">To TSV (Sheets)</button>
+        <button id="to-jooq">To JOOQ-ish</button>
+      </div>
+
+      <textarea id="output" readonly placeholder="Result will appear here and be copied to clipboard"></textarea>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
