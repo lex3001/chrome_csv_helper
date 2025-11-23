@@ -10,6 +10,33 @@ A lightweight Chrome extension that instantly transforms clipboard data between 
 - ⚡ **Fast and lightweight** - No external dependencies, runs entirely in your browser
 - 🎨 **Clean, simple UI** - Minimal clicks to get your data transformed
 
+## Common Use Cases
+
+### 📊 Google Sheets/Excel → Code
+Select and copy cells from Google Sheets or Excel, then transform to CSV or JSON to paste directly into your code editor (VS Code, Sublime, etc.). Perfect for:
+- Creating test data fixtures
+- Generating mock API responses
+- Building database seed files
+- Sharing data with non-spreadsheet users
+
+**Example workflow:**
+1. Select cells in Google Sheets (they copy as TSV)
+2. Click extension → "To JSON"
+3. Paste into VS Code as a ready-to-use JSON array
+
+### 💾 CSV/JSON → Google Sheets
+Copy CSV data from a file or JSON from an API response, convert to TSV, and paste directly into Google Sheets with proper cell separation.
+
+**Example workflow:**
+1. Copy CSV data from a text file or terminal output
+2. Click extension → "To TSV (Sheets)"
+3. Paste into Google Sheets - data automatically fills the correct cells
+
+### 🔄 Quick Format Switching
+- Convert comma-separated CSV to pipe-separated for different database imports
+- Transform JSON API responses to spreadsheet-friendly format
+- Generate SQL INSERT value lists from spreadsheet data
+
 ## Installation
 
 ### Option 1: Chrome Web Store (Recommended)
@@ -111,6 +138,9 @@ rsvg-convert -w 128 -h 128 icon.svg -o icon128.png
 rsvg-convert -w 48 -h 48 icon.svg -o icon48.png
 rsvg-convert -w 32 -h 32 icon.svg -o icon32.png
 rsvg-convert -w 16 -h 16 icon.svg -o icon16.png
+
+# Create a distributable ZIP for Chrome Web Store
+./build.sh
 ```
 
 ## File Structure

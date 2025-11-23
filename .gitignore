@@ -2,3 +2,4 @@ node_modules/
 .DS_Store
 *.log
 .vscode/
+chrome_csv_helper.zip
