@@ -164,7 +164,9 @@ function rowsToJooq(rows){
       const s = String(cell)
       if(/^\d+(\.\d+)?$/.test(s)) return s
       if(/^(true|false)$/i.test(s)) return s.toLowerCase()
-      return "'"+s.replace(/'/g,"\\'")+"'"
+      // Escape single quotes by doubling them (standard SQL). Backslash
+      // escaping is MySQL-specific and lets values break out of the string.
+      return "'"+s.replace(/'/g,"''")+"'"
     })
     return '('+parts.join(', ')+')'
   }).join(',\n')
@@ -196,7 +198,7 @@ function parseJooq(text){
     }
     if(cur!=='') parts.push(cur.trim())
     const cleaned = parts.map(p=>{
-      if(p.startsWith("'") && p.endsWith("'")) return p.slice(1,-1).replace(/\\'/g,"'")
+      if(p.startsWith("'") && p.endsWith("'")) return p.slice(1,-1).replace(/''/g,"'")
       if(/^NULL$/i.test(p)) return ''
       return p
     })
