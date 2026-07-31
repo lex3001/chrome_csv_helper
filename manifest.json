@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Clipboard Transformer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detect and convert clipboard data between TSV (Sheets), CSV, JSON, and a simple JOOQ-like format from the extension popup.",
   "icons": {
     "16": "icon16.png",
