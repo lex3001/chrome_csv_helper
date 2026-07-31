@@ -147,7 +147,7 @@ function rowsToJSON(rows){
   if(header.every(h=>h!=='')){
     const arr = rows.slice(1).map(r=>{
       const obj = {}
-      for(let i=0;i<header.length;i++) obj[header[i]||`col${i+1}`] = r[i]||''
+      for(let i=0;i<header.length;i++) obj[header[i]||`col${i+1}`] = r[i]??''
       return obj
     })
     return JSON.stringify(arr, null, 2)
@@ -258,7 +258,9 @@ async function convertAndCopy(to){
       if(Array.isArray(parsed)){
         if(parsed.length>0 && typeof parsed[0]==='object' && !Array.isArray(parsed[0])){
           const keys = Object.keys(parsed[0])
-          rows = [keys].concat(parsed.map(o=>keys.map(k=>o[k]||'')))
+          // Use ?? so legitimate falsy values (0, false) survive; only
+          // null/undefined become an empty cell.
+          rows = [keys].concat(parsed.map(o=>keys.map(k=>o[k]??'')))
         }else if(Array.isArray(parsed[0])){
           rows = parsed
         }else{
